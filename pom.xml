@@ -100,4 +100,11 @@
         </dependency>
     </dependencies>
 
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub voismager Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/voismager/happyshapes</url>
+        </repository>
+    </distributionManagement>
 </project>
