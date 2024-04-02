@@ -44,9 +44,9 @@ class HappyShapesGenerator {
         ).map { "#$it" }
     }
 
-    private fun generateShapes(mainComponent: String, keyComponent: String): HappyShapes {
-        val mainGenerator = NumberGenerator(mainComponent.toSeed())
-        val keyGenerator = NumberGenerator(keyComponent.toSeed())
+    private fun generateShapes(mainComponent: Long, keyComponent: Long): HappyShapes {
+        val mainGenerator = NumberGenerator(mainComponent)
+        val keyGenerator = NumberGenerator(keyComponent)
 
         val backgroundColorIndex = mainGenerator.nextBits(4)
         val key1Color = keyGenerator.nextBits(5)
@@ -66,6 +66,10 @@ class HappyShapesGenerator {
     }
 
     fun writeAsSvg(mainComponent: String, keyComponent: String, out: OutputStream) {
+        this.writeAsSvg(mainComponent.toSeed(), keyComponent.toSeed(), out)
+    }
+
+    fun writeAsSvg(mainComponent: Long, keyComponent: Long, out: OutputStream) {
         val writer = OUTPUT.createXMLStreamWriter(out)
 
         writer.writeStartElement("svg")
