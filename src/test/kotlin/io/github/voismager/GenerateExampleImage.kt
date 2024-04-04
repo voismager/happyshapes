@@ -1,6 +1,6 @@
-package happyshapes
+package io.github.voismager
 
-import fluffy.tigerrr.happyshapes.HappyShapesGenerator
+import io.github.voismager.HappyShapesGenerator
 import java.io.FileOutputStream
 
 fun main() {

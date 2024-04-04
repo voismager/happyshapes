@@ -1,4 +1,4 @@
-package fluffy.tigerrr.happyshapes
+package io.github.voismager
 
 data class HappyShapes (
     val shapes: Sequence<Shape>,

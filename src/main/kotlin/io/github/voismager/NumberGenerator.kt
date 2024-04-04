@@ -1,4 +1,4 @@
-package fluffy.tigerrr.happyshapes
+package io.github.voismager
 
 class NumberGenerator(seed: Long) {
     companion object {

@@ -1,4 +1,4 @@
-package fluffy.tigerrr.happyshapes
+package io.github.voismager
 
 import java.io.OutputStream
 import javax.xml.stream.XMLOutputFactory
@@ -65,10 +65,22 @@ class HappyShapesGenerator {
         return HappyShapes(shapes, backgroundColorIndex, key1Color, key2Color)
     }
 
+    /**
+     * Writes svg content to OutputStream.
+     * @param mainComponent used as a primary source of generation. Position, color, size of all shapes rely on this param.
+     * @param keyComponent used as a secondary source of generation. Only color of two random shapes depends on this param.
+     * @param out output stream.
+     */
     fun writeAsSvg(mainComponent: String, keyComponent: String, out: OutputStream) {
         this.writeAsSvg(mainComponent.toSeed(), keyComponent.toSeed(), out)
     }
 
+    /**
+     * Writes svg content to OutputStream.
+     * @param mainComponent used as a primary source of generation. Position, color, size of all shapes rely on this param.
+     * @param keyComponent used as a secondary source of generation. Only color of two random shapes depends on this param.
+     * @param out output stream.
+     */
     fun writeAsSvg(mainComponent: Long, keyComponent: Long, out: OutputStream) {
         val writer = OUTPUT.createXMLStreamWriter(out)
 
